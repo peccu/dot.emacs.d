@@ -1,0 +1,3 @@
+[submodule "git/emacs-tdd"]
+	path = git/emacs-tdd
+	url = https://github.com/jorgenschaefer/emacs-tdd.git
