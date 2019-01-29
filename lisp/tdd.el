@@ -1,1 +1,1 @@
-../git/emacs-tdd/tRdd.el
+../git/emacs-tdd/tdd.el
