@@ -103,8 +103,13 @@
 ;; revive.elで保存する変数
 (setq revive:save-variables-global-default
       '(truncate-partial-width-windows
-        make-backup-files version-control
-        visible-bell file-name-history buffer-name-history minibuffer-history))
+        make-backup-files
+        version-control
+        visible-bell
+        file-name-history
+        buffer-name-history
+        minibuffer-history
+        shell-command-history))
 
 ;; 設定ファイルの保存先
 (setq win:configuration-file (concat user-emacs-directory ".windows"))
