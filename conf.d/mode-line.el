@@ -93,3 +93,37 @@
 ;;     help-echo "Buffer name\nmouse-1: Previous buffer\nmouse-3: Next buffer"
 ;;     face
 ;;     mode-line-buffer-id)))
+
+;; face
+;; https://dev.to/gonsie/beautifying-the-mode-line-3k10
+(set-face-attribute 'mode-line nil
+                    :background "#00ddff"
+                    )
+
+;; /Applications/Emacs.app/Contents/Resources/lisp/faces.el.gz
+;; (defface mode-line
+;;   '((((class color) (min-colors 88))
+;;      :box (:line-width -1 :style released-button)
+;;      :background "grey75" :foreground "black")
+;;     (t
+;;      :inverse-video t))
+;;   "Basic mode line face for selected window."
+;;   :version "21.1"
+;;   :group 'mode-line-faces
+;;   :group 'basic-faces)
+
+;; (defface mode-line-inactive
+;;   '((default
+;;      :inherit mode-line)
+;;     (((class color) (min-colors 88) (background light))
+;;      :weight light
+;;      :box (:line-width -1 :color "grey75" :style nil)
+;;      :foreground "grey20" :background "grey90")
+;;     (((class color) (min-colors 88) (background dark) )
+;;      :weight light
+;;      :box (:line-width -1 :color "grey40" :style nil)
+;;      :foreground "grey80" :background "grey30"))
+;;   "Basic mode line face for non-selected windows."
+;;   :version "22.1"
+;;   :group 'mode-line-faces
+;;   :group 'basic-faces)
