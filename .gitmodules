@@ -1,3 +1,6 @@
 [submodule "git/emacs-tdd"]
 	path = git/emacs-tdd
 	url = https://github.com/jorgenschaefer/emacs-tdd.git
+[submodule "git/org-panes"]
+	path = git/org-panes
+	url = https://github.com/knupfer/org-panes.git
