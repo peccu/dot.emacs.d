@@ -1,7 +1,7 @@
 ;; (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 ;; (load-theme 'zenburn t)
 
-(add-to-list 'load-path (concat user-emacs-directory "lisp/color-theme-6.6.0"))
+(add-to-list 'load-path (concat user-emacs-directory "lisp/color-theme-6.6.1"))
 (require 'color-theme)
 (color-theme-initialize)
 (color-theme-dark-laptop)
