@@ -15,14 +15,14 @@
 ;; (define-key eev-mode-map "\M-P" 'ee-yank-one-line)
 ;; ;; For "compose pairs":
 ;; (define-key eev-mode-map [?\M-,] 'eev-compose-two-keys) ; works anywhere
-;; (define-key eev-mode-map "\M-h\M-d" 'find-debpkg-links)    
+;; (define-key eev-mode-map "\M-h\M-d" 'find-debpkg-links)
 ;; (define-key eev-mode-map "\M-h\M-e" 'find-eev-mode-links) ; special
-;; (define-key eev-mode-map "\M-h\M-f" 'find-efunction-links) 
-;; (define-key eev-mode-map "\M-h\M-i" 'find-einfo-links)     
-;; (define-key eev-mode-map "\M-h\M-k" 'find-ekey-links)      
-;; (define-key eev-mode-map "\M-h\M-m" 'find-manpage-links)   
-;; (define-key eev-mode-map "\M-h\M-v" 'find-evariable-links) 
-;; (define-key eev-mode-map "\M-hf"    'find-file-links)      
+;; (define-key eev-mode-map "\M-h\M-f" 'find-efunction-links)
+;; (define-key eev-mode-map "\M-h\M-i" 'find-einfo-links)
+;; (define-key eev-mode-map "\M-h\M-k" 'find-ekey-links)
+;; (define-key eev-mode-map "\M-h\M-m" 'find-manpage-links)
+;; (define-key eev-mode-map "\M-h\M-v" 'find-evariable-links)
+;; (define-key eev-mode-map "\M-hf"    'find-file-links)
 ;; (define-key eev-mode-map "\M-hm"    'find-last-manpage-links)
 ;; (define-key eev-mode-map "\M-h\M-s" 'find-efacedescr)
 ;; (define-key eev-mode-map "\M-h\M-c" 'describe-char)
