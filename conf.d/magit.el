@@ -116,3 +116,9 @@
 ;; stay in same window
 (custom-set-variables
    '(magit-display-buffer-function 'magit-display-buffer-same-window-except-diff-v1))
+
+;; https://www.clear-code.com/blog/2012/4/3.html
+;; https://magit.vc/manual/magit/Diff-Options.html
+(setq magit-diff-refine-hunk 'all)
+(setq magit-diff-paint-whitespace-lines 'all)
+(setq magit-diff-highlight-trailing t)
