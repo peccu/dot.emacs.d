@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: join
+# --
+$>'table' => '$1',
+$>'alias' => '${1:$(ik:camerize<->decamelize yas-text)}',
+$>'type' => '${2:LEFT}',
+$0

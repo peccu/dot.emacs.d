@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: conj
+# --
+console.log('$1', angular.toJson($1, true));$0

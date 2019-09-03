@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: map
+# --
+map(function(e, i, a){$0})

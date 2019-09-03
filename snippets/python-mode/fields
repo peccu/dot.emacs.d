@@ -1,0 +1,57 @@
+# name: fields.type
+# key: fields
+# --
+fields.${1:$$(yas-choose-value '(
+  "Char"
+  "Boolean"
+  "Integer"
+  "Float"
+  "Text"
+  "Selection"
+  "Html"
+  "Date"
+  "Datetime"
+  "Many2one"
+  "One2many"
+  "Many2many"
+  "Reference"
+  "Currency"
+  "Monetary"
+  "Binary"
+))}(
+$>string='$2',
+${3:required=False,
+}${4:readonly=False,
+}${5:compute=None,
+}${6:inverse=None,
+}${7:search=None,
+}${8:store=False,
+}${9:compute_sudo=False,
+}${1:$(string-join
+ (delq
+  ""
+  (cond
+   ((string= yas-text "Char") '("size=20"))
+   ((string= yas-text "Float") '("digits=(4, 2)"))
+   ((string= yas-text "Selection") '("selection=[('value', 'string')]"))
+   ((string= yas-text "Many2one")
+    `("comodel_name='target.model'"
+      "domain=[]"
+      "context={}"
+      ,(concat "ondelete='" (yas-choose-value '("set null" "restrict" "cascade")) "'")))
+   ((string= yas-text "Currency")
+    '("comodel_name='res.currency'"
+      "ondelete='set null'"))
+   ((string= yas-text "One2many")
+    '("comodel_name='target.model'"
+      "inverse_name='target_model_id'"
+      "domain=[]"
+      "context={}"
+      "limit=10"))
+   ((string= yas-text "Many2many")
+    '("comodel_name='target.model'"
+      "domain=[]"
+      "context={}"
+      "limit=10"))
+   (t '())))
+ ",\n    ")}$0)

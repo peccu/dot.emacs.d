@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: cont
+# --
+console.table($1, ${2:rows});$0

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: reduce
+# --
+reduce(function(acc, e, i, a){
+$>$0
+}, ${1:acc})

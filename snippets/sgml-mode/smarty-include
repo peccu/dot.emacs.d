@@ -1,0 +1,4 @@
+#name : smarty template
+#key : include
+# --
+<!--{include file=${1:\$smarty.current_dir|cat:}'/$2.tpl'${3:assign=action}}-->$0

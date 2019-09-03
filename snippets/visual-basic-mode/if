@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name:if
+# --
+If $1 Then
+$>$0
+${2:Else}
+
+End If

@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: defaultparam
+# --
+$1 = typeof $1 !== 'undefined' ? $1 : $2;$0

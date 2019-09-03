@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: _module
+# --
+'use strict';
+var \$;
+var $1 = (function(window, \$){
+$>var module = {
+$>};
+$>return module;
+})(window, \$);

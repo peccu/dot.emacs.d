@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: cons
+# --
+console.log('$1');$0

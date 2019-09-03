@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: $fi
+# --
+$filter('$1')($0);

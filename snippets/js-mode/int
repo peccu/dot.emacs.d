@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: parseInt
+# --
+parseInt($1, ${2:Const.BASE_RADIX})$0

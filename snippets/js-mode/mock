@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: mock
+# --
+exports.$1 = function(req, res){
+  $0
+  var response = {};
+  // Simulate delay in server
+  setTimeout(function() {
+    res.send(response);
+  }, 500);
+};
+

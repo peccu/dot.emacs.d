@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: tri
+# --
+$1 ? $1 : $0

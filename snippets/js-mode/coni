@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: coni
+# --
+console.log('$1', util.inspect($1, false, null));$0

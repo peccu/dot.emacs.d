@@ -1,0 +1,13 @@
+#name : fetchAll
+# --
+$>try{
+$>$sql  = "";
+$>$sql .= "";
+$0
+$>$param = array(
+$>);
+$>
+$>return $this->getAdapter()->fetchAll($sql, $param);
+$>} catch (Exception $e) {
+$>throw $e;
+$>}

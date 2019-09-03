@@ -1,0 +1,3 @@
+#name : if
+# --
+<% if ${1:Request.has_key("$2") and Request["$2"]${3: != ""}}$0: %>

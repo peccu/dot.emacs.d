@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: noti
+# --
+UtilLog::notify_log(${1:__FILE__ . ":" . __LINE__});$0

@@ -1,0 +1,8 @@
+# name: update
+# --
+update ${1:table}
+set
+  ${2:col} = ${3:val}${4:,
+  }
+where
+  $0

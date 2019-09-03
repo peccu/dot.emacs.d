@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: foreach
+# --
+forEach(function(e, i, a){
+$>$0
+}${1:, thisArg})

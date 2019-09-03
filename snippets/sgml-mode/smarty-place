@@ -1,0 +1,4 @@
+#name : smarty template
+#key : <!
+# --
+<!--{$1}-->$0

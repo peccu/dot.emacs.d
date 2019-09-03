@@ -1,0 +1,48 @@
+# -*- mode: snippet -*-
+# name: template
+# --
+<template>
+  <div id="$1">
+    $0
+  </div>
+</template>
+
+<script>
+export default {
+  name: '$1',
+  props: [
+  ],
+  components: {
+  },
+  computed: {
+  },
+  data () {
+    return {
+    }
+  },
+  watch: {
+  },
+  beforeCreate () {
+  },
+  created () {
+  },
+  beforeMount () {
+  },
+  mounted () {
+  },
+  beforeUpdate () {
+  },
+  updated () {
+  },
+  beforeDestroy () {
+  },
+  destroyed () {
+  },
+  methods: {
+  }
+}
+</script>
+
+<style lang="less" scoped>
+
+</style>

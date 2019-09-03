@@ -1,0 +1,3 @@
+#name : $tbl = new TBL();
+# --
+$$1 = new ${1:$(upcase yas/text)}();$0

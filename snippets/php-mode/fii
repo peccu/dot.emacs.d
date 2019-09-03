@@ -1,0 +1,5 @@
+#name : if(FormatManager::isInput()){...}
+# --
+$>if($1FormatManager::isInput($2)){
+$>$0
+$>}

@@ -1,0 +1,31 @@
+# -*- mode: snippet -*-
+# name: jq
+# --
+javascript:
+(function(){
+  var action = function($){
+    \$($1).each(function(i,e,a){
+      $0
+      console.log(e);
+    });
+  };
+  (function(action){
+    var script = document.createElement('script');
+    script.src = '//ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js';
+    document.head.appendChild(script);
+    var checkReady = function(callback){
+      if(window.jQuery){
+        callback(window.jQuery);
+      }else{
+        window.setTimeout(function(){
+            checkReady(callback);
+        }, 100);
+      }
+    };
+    if(!window.jQuery){
+      checkReady(action);
+    }else{
+      action(window.jQuery);
+    }
+  })(action);
+})();

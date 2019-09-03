@@ -1,0 +1,3 @@
+#name : log
+# --
+UtilLog::write_log('$2', ${1:$$(yas-choose-value '("WARNING" "ERROR" "INFO" "DEBUG"))});$0
