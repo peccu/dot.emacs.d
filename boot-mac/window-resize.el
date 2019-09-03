@@ -1,0 +1,1 @@
+../conf.d/window-resize.el
