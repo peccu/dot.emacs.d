@@ -8,6 +8,7 @@
 (push '("*helm M-x*" :height 30) popwin:special-display-config)
 (push '("*Codic Result*" :height 30) popwin:special-display-config)
 (push '("*Help*" :height 30) popwin:special-display-config)
+(push '("*quickrun*") popwin:special-display-config)
 
 (push '("^\\*ag.*\\*" :regexp t :height 80) popwin:special-display-config)
 (push '("^\\*anything.*\\*$" :regexp t :height 30) popwin:special-display-config)
