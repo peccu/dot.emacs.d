@@ -1,0 +1,4 @@
+org-[0-9]*/*
+!org-[0-9]*/contrib/
+org-[0-9]*/contrib/*
+!org-[0-9]*/contrib/lisp
