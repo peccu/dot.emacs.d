@@ -35,3 +35,4 @@ git/ntlniph/
 /elpa/
 /.session.*
 /.windows.*
+.yas-compiled-snippets.el
