@@ -1,0 +1,1 @@
+../conf.d/auto-highlight-symbol-mode.el
