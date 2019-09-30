@@ -12,6 +12,7 @@
 (add-to-list 'auto-mode-alist '("\\.ctp?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.ejs?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.twig?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.svelte?\\'" . web-mode))
 
 (defun web-mode-hook ()
   "Hooks for Web mode."
