@@ -72,10 +72,10 @@
           (lambda ()
             (setq auto-composition-mode nil)))
 
-;; https://github.com/adobe-fonts/source-code-pro
-;; https://emacs.stackexchange.com/a/2503/10850
-(set-face-attribute 'default nil
-                    :family "Source Code Variable"
-                    :height 130
-                    :weight 'normal
-                    :width 'normal)
+;; ;; https://github.com/adobe-fonts/source-code-pro
+;; ;; https://emacs.stackexchange.com/a/2503/10850
+;; (set-face-attribute 'default nil
+;;                     :family "Source Code Variable"
+;;                     :height 130
+;;                     :weight 'normal
+;;                     :width 'normal)
