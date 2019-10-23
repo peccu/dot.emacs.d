@@ -1,0 +1,30 @@
+(require 'org)
+;; for s-repeat
+(require 's)
+
+(defun org-to-md-list ()
+  (interactive)
+  (save-excursion
+    (save-restriction
+      (let ((star-count (org-current-level)))
+        (org-mark-subtree)
+        (narrow-to-region (region-beginning) (region-end))
+        (let ((buf (current-buffer))
+              (from (point-min))
+              (to (point-max)))
+          (with-temp-buffer
+            (switch-to-buffer (current-buffer) nil t)
+            (insert-buffer-substring buf from to)
+            (goto-char (point-min))
+            (while (re-search-forward "\* " nil t)
+              (replace-match "*- "))
+            (goto-char (point-min))
+            (while (re-search-forward (concat "^" (s-repeat star-count "\\*")) nil t)
+              (replace-match "")
+              (next-line)
+              (beginning-of-line))
+            (goto-char (point-min))
+            (while (re-search-forward "\*" nil t)
+              (replace-match "  "))
+            (kill-ring-save (point-min) (point-max))
+            (message "markdown list has copied")))))))
