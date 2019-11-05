@@ -4,3 +4,6 @@
 [submodule "git/org-panes"]
 	path = git/org-panes
 	url = https://github.com/knupfer/org-panes.git
+[submodule "git/tern"]
+	path = git/tern
+	url = https://github.com/marijnh/tern.git
