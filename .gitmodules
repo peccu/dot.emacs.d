@@ -7,3 +7,6 @@
 [submodule "git/tern"]
 	path = git/tern
 	url = https://github.com/marijnh/tern.git
+[submodule "git/emacs-sourcetrail"]
+	path = git/emacs-sourcetrail
+	url = https://github.com/CoatiSoftware/emacs-sourcetrail.git
