@@ -10,3 +10,6 @@
 [submodule "git/emacs-sourcetrail"]
 	path = git/emacs-sourcetrail
 	url = https://github.com/CoatiSoftware/emacs-sourcetrail.git
+[submodule "git/vscode-dark-plus-emacs-theme"]
+	path = git/vscode-dark-plus-emacs-theme
+	url = https://github.com/ianpan870102/vscode-dark-plus-emacs-theme.git
