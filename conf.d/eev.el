@@ -46,15 +46,15 @@
 (eev-mode 1)
 (require 'eev-elinks)
 
-;; http://rakunet.org/TSNET/TSfree/12/371.html
-(defun ee-next-sexp ()
-  (interactive)
-  (re-search-forward ")$"))
-(defun ee-prev-sexp ()
-  (interactive)
-  (re-search-backward ")$"))
-(global-set-key "\M-p" 'ee-prev-sexp)
-(global-set-key "\M-n" 'ee-next-sexp)
+;; ;; http://rakunet.org/TSNET/TSfree/12/371.html
+;; (defun ee-next-sexp ()
+;;   (interactive)
+;;   (re-search-forward ")$"))
+;; (defun ee-prev-sexp ()
+;;   (interactive)
+;;   (re-search-backward ")$"))
+;; (global-set-key "\M-p" 'ee-prev-sexp)
+;; (global-set-key "\M-n" 'ee-next-sexp)
 
 
 ;; (eeindex)

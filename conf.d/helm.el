@@ -74,3 +74,5 @@
 ;;                      "*helm spotlight*"))
 ;; (helm-mac-spotlight)
 ;; actionが何かわからん。
+
+(global-set-key (kbd "M-p") 'helm-browse-project)
