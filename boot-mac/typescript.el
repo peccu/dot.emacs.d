@@ -1,0 +1,1 @@
+../conf.d/typescript.el
