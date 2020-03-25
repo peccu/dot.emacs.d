@@ -1,0 +1,1 @@
+../conf.d/sequence-rectangle.el
