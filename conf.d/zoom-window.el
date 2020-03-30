@@ -1,3 +1,4 @@
 (require 'zoom-window)
 ;; overwrite windows.el
-(define-key win:switch-map (kbd "SPC") 'zoom-window-zoom)
+(eval-after-load 'windows
+  (define-key win:switch-map (kbd "SPC") 'zoom-window-zoom))
