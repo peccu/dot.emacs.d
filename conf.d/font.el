@@ -99,6 +99,9 @@
   ;; so that the beginning of the buffer may not be visible correctly.
   (set-face-attribute 'default nil :height 120)
 
+  (add-to-list 'face-font-rescale-alist
+               '(".*Osaka.*" . 1.2))
+
   ;; use specific font for Korean charset.
   ;; if you want to use different font size for specific charset,
   ;; add :size POINT-SIZE in the font-spec.
