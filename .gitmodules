@@ -13,3 +13,9 @@
 [submodule "git/vscode-dark-plus-emacs-theme"]
 	path = git/vscode-dark-plus-emacs-theme
 	url = https://github.com/ianpan870102/vscode-dark-plus-emacs-theme.git
+[submodule "git/power-query-mode"]
+	path = git/power-query-mode
+	url = https://github.com/fpvmorais/power-query-mode.git
+[submodule "git/git-gutter"]
+	path = git/git-gutter
+	url = https://github.com/emacsorphanage/git-gutter.git
