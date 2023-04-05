@@ -76,3 +76,4 @@
 ;; actionが何かわからん。
 
 (global-set-key (kbd "M-p") 'helm-browse-project)
+(global-set-key (kbd "M-o") 'helm-occur)
