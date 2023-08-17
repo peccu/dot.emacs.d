@@ -3,7 +3,7 @@
        win-env-p
        ;; wsl-p
        )
-  (require 'web-mode)
+  (require-with-install 'web-mode)
   ;; (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
   ;; (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
   ;; (add-to-list 'auto-mode-alist '("\\.jsp\\'" . web-mode))

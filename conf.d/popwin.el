@@ -3,7 +3,7 @@
        win-env-p
        ;; wsl-p
        )
-  (require 'popwin)
+  (require-with-install 'popwin)
   ;; (setq display-buffer-function 'popwin:display-buffer)
   ;; obsolete from 24.3
   ;; change to this (https://github.com/m2ym/popwin-el/commit/b6ac46b65acb15894ae9ae34686945369d798e93)

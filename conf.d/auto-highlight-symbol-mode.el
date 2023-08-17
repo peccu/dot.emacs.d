@@ -3,7 +3,7 @@
        win-env-p
        ;; wsl-p
        )
-  (require 'auto-highlight-symbol)
+  (require-with-install 'auto-highlight-symbol)
   (ahs-set-idle-interval 0.5)
   (global-auto-highlight-symbol-mode t)
   ;; 適用範囲をデフォルトの見えている範囲ではなく buffer 全体に

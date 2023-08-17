@@ -3,7 +3,7 @@
        win-env-p
        ;; wsl-p
        )
-  (require 'multiple-cursors)
+  (require-with-install 'multiple-cursors)
   ;; (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
   ;; mc/mark-all-like -this
   (global-set-key (kbd "C-M->") 'mc/mark-all-like-this-dwim)
