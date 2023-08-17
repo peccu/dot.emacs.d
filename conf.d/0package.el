@@ -1,4 +1,3 @@
-(require 'package)
 (prog1 "setup package"
   (custom-set-variables
    '(package-archives '(
