@@ -4,7 +4,7 @@
        ;; wsl-p
        )
   ;; curl -Lo ~/AppData/Roaming/.emacs.d/lisp/color-moccur.el https://github.com/emacsmirror/color-moccur/raw/master/color-moccur.el
-  (require 'color-moccur)
+  (require-with-install 'color-moccur)
   ;; this includes dmoccur
   (global-set-key (kbd "C-M-o") 'dmoccur)
   ;; dired moccur marked files
