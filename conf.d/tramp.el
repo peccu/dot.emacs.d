@@ -1,4 +1,9 @@
-(add-to-list 'load-path "~/.emacs.d//git/tramp/lisp")
+(when (or
+       ;; peccu-p
+       win-env-p
+       wsl-p
+       )
+;; (add-to-list 'load-path "~/.emacs.d//git/tramp/lisp")
 (require 'tramp)
 
 (add-to-list 'tramp-remote-process-environment
@@ -15,3 +20,4 @@
 
 ;; (defadvice tramp-handle-vc-registered (around tramp-handle-vc-registered-around activate)
 ;;   (let ((vc-handled-backends '(Git))) ad-do-it))
+)
