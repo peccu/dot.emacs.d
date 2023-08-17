@@ -25,7 +25,7 @@
                   ))
 
 (setq
- peccu-p         (string-match "^peccu\\(\\..+\\)*$" system-name)
+ peccu-p         (string-match "^peccu\\(.+\\)*$" system-name)
  win-env-p      (or
                  (string-match "^SOME-HOSTNAME$" system-name)
                  )
