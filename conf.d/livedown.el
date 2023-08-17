@@ -1,1 +1,7 @@
-(require 'livedown)
+(when (or
+       peccu-p
+       ;; win-env-p
+       ;; wsl-p
+       )
+  (require 'livedown)
+)
