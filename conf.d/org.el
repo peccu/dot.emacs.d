@@ -7,7 +7,7 @@
   ;; (add-to-list 'load-path "~/.emacs.d/lisp/org/contrib/babel/langs/")
   ;; ->melpaでelfeed-orgを入れたら入ったっぽい
   ;; org-modeの初期化
-                                        ; (setq shell-file-name "C:/Apps/gnupack_devel-11.00/app/cygwin/cygwin/bin/bash.exe")
+  ;; (setq shell-file-name "C:/Apps/gnupack_devel-11.00/app/cygwin/cygwin/bin/bash.exe")
   ;; ↑0shell.elに記載しているが、どうもここに書かないとみてくれない
   (require 'org-install)
   ;; (require 'org)
