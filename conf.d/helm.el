@@ -16,7 +16,11 @@
 ;; (require 'helm-eshell)
 ;; (require 'helm-eval)
 ;; (require 'helm-external)
-;; (require 'helm-files)
+(require 'helm-files)
+;; use ffap for helm-find-files
+(setq helm-ff-guess-ffap-filenames t)
+(define-key helm-find-files-map (kbd "C-r") 'helm-ff-file-name-history)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
 ;; (require 'helm-firefox)
 ;; (require 'helm-font)
 ;; (require 'helm-gentoo)
