@@ -3,7 +3,7 @@
        ;; win-env-p
        ;; wsl-p
        )
-  (require 'tdd)
+  (require-with-install 'tdd)
   ;; tdd runs `recompile' when file saved.
   ;; `recompile' exec `compile-command'
   (add-hook 'js2-mode-hook
