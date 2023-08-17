@@ -1,13 +1,43 @@
-;; (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-;; (load-theme 'zenburn t)
+(when (or
+       ;; peccu-p
+       win-env-p
+       ;; wsl-p
+       )
+  ;; (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+  ;; (load-theme 'zenburn t)
+  (add-to-list 'load-path (concat user-emacs-directory "lisp/color-theme-6.6.1"))
+  (require 'color-theme)
+  (color-theme-initialize)
+  (color-theme-dark-laptop)
+  ;; overwrite default foreground
+  ;; because of FiraCode breaks it
+  (set-face-foreground 'default "white")
+  )
+(when (or
+       peccu-p
+       ;; win-env-p
+       ;; wsl-p
+       )
+  (unless (fboundp 'color-theme-mode)
+    (package-install 'color-theme))
+  (require 'color-theme)
+  (color-theme-initialize)
+  (color-theme-dark-laptop)
+  )
 
-(add-to-list 'load-path (concat user-emacs-directory "lisp/color-theme-6.6.1"))
-(require 'color-theme)
-(color-theme-initialize)
-(color-theme-dark-laptop)
+(when
+    ;; wsl-p or so
+    (version<= "29" emacs-version)
+  ;; https://github.com/emacs-jp/replace-colorthemes
+  (require-with-install 'color-theme-modern)
+  (load-theme 'dark-laptop t t)
+  (enable-theme 'dark-laptop)
+  )
+
 ;; for print
 ;; (let ((color-theme-is-global nil))(color-theme-vim-colors))
 ;; for return theme
+;; (let ((color-theme-is-global nil))(return-to-dark-laptop))
 ;; (let ((color-theme-is-global nil))(color-theme-dark-laptop))
 ;; current-setting
 ;; (color-theme-print)
