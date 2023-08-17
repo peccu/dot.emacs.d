@@ -133,8 +133,9 @@
     )))
 
 (when
-    ;; should be peccu-p
-    (eq system-type 'darwin)
+    ;; should be peccu-p but not configured
+    (and (not peccu-p)
+         (eq system-type 'darwin))
 
   (face-all-attributes 'default)
 
