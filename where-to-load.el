@@ -12,7 +12,7 @@
        ;; 指定されていないマシンで実行中の場合
        (t
         (progn
-          (message (concat "Unknown Host: " system-name))
+          (message (concat "Unknown Environment (Host: " system-name ")"))
           nil))))
 ;; (message where-to-load)
 
