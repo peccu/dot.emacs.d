@@ -4,6 +4,7 @@
        ;; wsl-p
        )
   ;; anything-c-moccurの設定
+  (require-with-install 'color-moccur)
   (require 'anything-c-moccur)
   ;; カスタマイズ可能変数の設定(M-x customize-group anything-c-moccur でも設定可能)
   (setq
