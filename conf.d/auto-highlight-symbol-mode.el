@@ -1,7 +1,7 @@
 (when (or
        peccu-p
        win-env-p
-       wsl-p
+       ;; wsl-p
        )
   (require 'auto-highlight-symbol)
   (ahs-set-idle-interval 0.5)
