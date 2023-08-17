@@ -1,27 +1,27 @@
-(when (or
-       ;; peccu-p
-       win-env-p
-       ;; wsl-p
-       )
-  ;; (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-  ;; (load-theme 'zenburn t)
-  (add-to-list 'load-path (concat user-emacs-directory "lisp/color-theme-6.6.1"))
-  (require 'color-theme)
-  (color-theme-initialize)
-  (color-theme-dark-laptop)
-  ;; overwrite default foreground
-  ;; because of FiraCode breaks it
-  (set-face-foreground 'default "white")
-  ;; same as mode-line.el
-  (set-face-attribute 'mode-line nil
-                      :background "#00ddff"
-                      )
-  )
+;; (when (or
+;;        ;; peccu-p
+;;        win-env-p
+;;        ;; wsl-p
+;;        )
+;;   ;; (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+;;   ;; (load-theme 'zenburn t)
+;;   (add-to-list 'load-path (concat user-emacs-directory "lisp/color-theme-6.6.1"))
+;;   (require 'color-theme)
+;;   (color-theme-initialize)
+;;   (color-theme-dark-laptop)
+;;   ;; overwrite default foreground
+;;   ;; because of FiraCode breaks it
+;;   (set-face-foreground 'default "white")
+;;   ;; same as mode-line.el
+;;   (set-face-attribute 'mode-line nil
+;;                       :background "#00ddff"
+;;                       )
+;;   )
 
 (when
     (or
      peccu-p
-     ;; win-env-p
+     win-env-p
      wsl-p
      (version<= "29" emacs-version)
      )
