@@ -15,8 +15,9 @@
      '(gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3"))
     )
   (package-initialize)
-  ;; elpaディレクトリを消したら再実行必要
-  ;; (package-refresh-contents)
+  ;; https://emacs.stackexchange.com/questions/42072/when-to-call-package-refresh-contents-in-init-el
+  (unless package-archive-contents
+    (package-refresh-contents))
   )
 
 (defun require-with-install (package)
