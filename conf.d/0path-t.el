@@ -9,6 +9,7 @@
               (expand-file-name "~/.emacs.d/bin")
               (expand-file-name "~/bin")
               (expand-file-name "~/Library/Haskell/bin")
+              (expand-file-name "~/../../AppData/Local/Programs/msys64/usr/bin")
               ;; "/Apps/gnupack_devel-11.00/app/cygwin/cygwin/usr/local/bin"
               ;; "/Apps/gnupack_devel-11.00/app/cygwin/cygwin/usr/bin"
               ;; "/Apps/gnupack_devel-11.00/app/cygwin/cygwin/bin/"
@@ -20,7 +21,7 @@
    (setenv "PATH" (concat dir ":" (getenv "PATH")))
    (setq exec-path (append (list dir) exec-path))))
 
-(require 'exec-path-from-shell)
+(require-with-install 'exec-path-from-shell)
 (when (and (memq window-system '(mac ns))
            (functionp 'exec-path-from-shell-initialize))
   (exec-path-from-shell-initialize)
