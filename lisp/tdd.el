@@ -1,1 +1,0 @@
-../git/emacs-tdd/tdd.el
