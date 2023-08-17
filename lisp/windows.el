@@ -1,7 +1,7 @@
 ;;; windows.el --- Window manager for GNU Emacs. -*- coding: euc-jp -*-
-;;; $Id: windows.el,v 2.49 2014/05/22 23:00:25 yuuji Exp $
-;;; (c) 1993-2014 by HIROSE Yuuji [yuuji@gentei.org]
-;;; Last modified Fri May 23 07:54:23 2014 on firestorm
+;;; $Id: windows.el,v 2.53 2018/06/02 06:55:03 yuuji Exp $
+;;; (c) 1993-2017 by HIROSE Yuuji [yuuji@gentei.org]
+;;; Last modified Sat Jun  2 15:51:12 2018 on firestorm
 
 ;;; Commentary:
 ;;;
@@ -306,9 +306,10 @@
 ;;;
 ;;;[Copying]
 ;;;
-;;;	  This program is distributed as a free  software. The author is
-;;;	not responsible  for  any  possible   defects   caused  by  this
-;;;	software.
+;;;	  This program is distributed as a free software. The author is
+;;;	not responsible for any possible defects caused by this
+;;;	software. This software can be treated with: ``The 2-Clause BSD
+;;;	License''(since 2017-09-09, windows.el 2.52).
 ;;;
 ;;;	  Comments and bug reports  are  welcome.   Don't  hesitated  to
 ;;;	report.  My possible e-mail address is following.
@@ -723,8 +724,8 @@ If nil, do not preserve buffer-list priority")
 
 ;;Variables for XEmacs
 (defvar win:frame-title-function
-  '(lambda (index)
-     (format (if (featurep 'mule) "mule[%d]" "emacs[%d]") index))
+  (function(lambda (index)
+	     (format (if (featurep 'mule) "mule[%d]" "emacs[%d]") index)))
   "*Window title creation function.
 One argument of frame number should be taken.")
 
@@ -757,28 +758,15 @@ One argument of frame number should be taken.")
 	    (make-frame
 	     (cons
 	      (cons 'name "mule[1]")
-	      (mapcar '(lambda (s)
-			 (cons s (frame-property old s)))
-		      '(top left height width))))
+	      (mapcar (function(lambda (s)
+				 (cons s (frame-property old s)))
+			       '(top left height width)))))
 	  (delete-frame old)))))
 
-;; for Nemacs(Emacs-18)
-(if (fboundp 'add-hook)
-    nil
-  (defun win:add-hook (hook funcs &optional append local)
-    "Append funcs to hook's value keeping its uniquness."
-    ;;Derived from add-hook.el by Daniel LaLiberte.
-    (if (boundp hook)
-	(let ((value (symbol-value hook)))
-	  (if (and (listp value) (not (eq (car value) 'lambda)))
-	      (and (not (memq funcs value))
-		   (set hook
-			(append value (list funcs))))
-	    (and (not (eq funcs value))
-		 (set hook
-		      (list value funcs)))))
-      (set hook funcs)))
-  (fset 'add-hook 'win:add-hook))
+(defun win:sit-for-a-while (&optional secstr)
+  "Wrap function to cover floating point number with string"
+  (let ((defsec (if (and window-system (eq window-system 'w32)) "0.2" "0.1")))
+    (sit-for (string-to-number (or secstr defsec)))))
 
 (defun win:make-frame (index &optional prop)
   "Wrapper function for make-frame;
@@ -795,7 +783,7 @@ make-frame function."
 	  (progn
 	    (while (and (> count 0) (not (frame-visible-p frame)))
 	      (setq count (1- count))
-	      (sit-for (string-to-number "0.1")))
+	      (win:sit-for-a-while))
 	    ;;Emacs 20 becomes not to support top/left for initial parameter.
 	    (modify-frame-parameters frame prop)))
       frame)))
@@ -807,7 +795,7 @@ make-frame function."
 (and (fboundp 'eval-when-compile)
      (eval-when-compile (require 'revive)))
 
-;; for Emacs-24.3+ and NEmacs
+;; for Emacs-24.3+
 (defun win:last-key ()
   "Return last-command-event or last-command-char."
   (if (boundp 'last-command-char) last-command-char last-command-event))
@@ -1515,7 +1503,8 @@ Do not call this function."
       ;; allocating frame here won't work.  So we set window-setup-hook to
       ;; do all the jobs after frame initialization has been done.
       (add-hook 'window-setup-hook
-		'(lambda ()
+		(function
+		 (lambda ()
 		   (if (aref win:configs 1) ;Already resumed by resume-windows
 		       ;; `emacs -e resume-windows' leads to this section.
 		       (progn
@@ -1533,7 +1522,7 @@ Do not call this function."
 		       (while (and (null (visible-frame-list))
 				   (> count 0))
 			 (message "Waiting for frames to be shown...")
-			 (sit-for (string-to-number "0.1"))
+			 (win:sit-for-a-while)
 			 (setq count (1- count))))
 		     (select-frame
 		      (car
@@ -1562,7 +1551,7 @@ Do not call this function."
 		     (let ((index 1) (frame (aref win:configs 1)))
 		       (run-hooks 'win:allocate-frame-hook))
 		     (sit-for 1))
-		   'append)))
+		   'append))))
      (t					;not frame environment
       (win:store-config 1)
       (win:update-mode-line 1)
@@ -1573,7 +1562,7 @@ Do not call this function."
 ;; Functions for resume.
 ;;;
 (defconst win:revision
-  "$Revision: 2.49 $"
+  "$Revision: 2.53 $"
   "Revision string of windows.el")
 (defvar win:revision-prefix ";win;")
 
@@ -1830,10 +1819,12 @@ Non-nil for optional argument PRESERVE keeps all current buffers."
 	;;'visibility attribute is not defined in XEmacs...
 	(or (eq t (frame-visible-p goal))
 	    (make-frame-visible goal))
-	(while (not (frame-visible-p goal)) (sit-for 0))
+	(or (frame-visible-p goal) (win:sit-for-a-while))
 	(raise-frame goal)
-	(select-frame goal)
 	(if (fboundp 'x-focus-frame) (x-focus-frame goal))
+	(if (fboundp 'select-frame-set-input-focus)
+	    (select-frame-set-input-focus goal) ;Emacs26 workaround
+	  (select-frame goal))
 	(if (not (eq (selected-frame) goal))
 	    nil
 	  (or win:xemacs-p (unfocus-frame))
@@ -2293,6 +2284,13 @@ If interactive argument KILL is non-nil, kill menu buffer and no select."
 	  (setq ad-return-value
 		(format "%s%d" ad-return-value win:current-config)))))
 
+;; Workaround for gnupack Emacs24.5
+(and (string-match "24\\.5\\." (emacs-version))
+     (string-match "gnupack$" (emacs-version))
+     (fboundp 'wrap-function-to-control-ime)
+     ;; Wrapping function of gnupack emacs24.5 breaks frame creation
+     (add-hook 'term-setup-hook (function (lambda() (load "windows")))))
+
 ;;;
 ;; Final setup.
 ;;;
@@ -2300,6 +2298,21 @@ If interactive argument KILL is non-nil, kill menu buffer and no select."
 (run-hooks 'win-load-hook)
 
 ;; $Log: windows.el,v $
+;; Revision 2.53  2018/06/02 06:55:03  yuuji
+;; Summary: Possible workaround for Emacs26's behaviour of mouse-followed-focus
+;;
+;; Revision 2.52  2017/09/09 14:46:43  yuuji
+;; Summary: License changed.
+;;
+;; Revision 2.51  2017/02/21 08:12:44  yuuji
+;; Summary: Drop support of NEmacs - Emacs-18(string-to-int -> string-to-number)
+;;
+;; Revision 2.50  2017/01/16 00:09:57  yuuji
+;; Workaround for Emacs 24.5 on gnupack.
+;; Emacs 24.5 on gnupack does not update window status at "(sit-for 0)".
+;; Instead, calling sit-for with 0.1sec.
+;; (Thanks to masutani>at<osakac.ac.jp)
+;;
 ;; Revision 2.49  2014/05/22 23:00:25  yuuji
 ;; Fix error on window deletion right after its generation.
 ;; (Thanks to Thomas Schwinge)
