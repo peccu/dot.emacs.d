@@ -929,3 +929,7 @@ decides which time to use."
 
 ;; add contrib for ox-taskjuggler
 (add-to-list 'load-path "~/.emacs.d/lisp/org/contrib/lisp")
+
+
+;; after Emacs 28, default value is changed to showeverything
+(setq org-startup-folded t)
