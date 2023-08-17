@@ -1,0 +1,36 @@
+(defvar anything-c-source-other-windows)
+
+(defun anything-win-switch-to-window (num)
+  (let ((last-command-char num))
+    (message "%d switch" num)
+    (call-interactively 'win-switch-to-window)))
+;; (string-to-char "a"); = >97
+;; (anything-win-switch-to-window 97)
+
+(setq anything-c-source-other-windows
+      '((name . "Other Windows")
+        (candidates . (lambda ()
+                        (win:store-config win:current-config)
+                        (let ((i 1) (l (list))
+                              (form (format "[w%%c]%%s %%-%ds [%%s]" win:names-maxl)))
+                          (while (< i win:max-configs)
+                            (add-to-list 'l
+                                         (if (aref win:configs i)
+                                             (format form
+                                                     (+ win:base-key i)
+                                                     (cond ((= i win:current-config) "*")
+                                                           ((= i win:last-config) "+")
+                                                           (t " "))
+                                                     (format "%s" (aref win:names-prefix i))
+                                                     (aref win:names i))
+                                           (format form (+ win:base-key i) " " "" "")))
+                            (setq i (1+ i)))
+                          (sort l 'string<))))
+        (action . (("Switch to Other Window" . (lambda (arg)
+                                                 (if (string-match "^\\[w\\(.\\)\\]" arg)
+                                                     (let* ((num (string-to-char (match-string 1 arg))))
+                                                       (anything-win-switch-to-window num)))))))))
+(defun anything-other-windows ()
+  (interactive)
+  (anything 'anything-c-source-other-windows))
+(provide 'anything-c-source-other-windows)
