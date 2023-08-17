@@ -23,8 +23,9 @@
       (load (expand-file-name "subdirs.el") t t t))))
 
 ;; システムごとの設定を読み込む
-(require 'load-config-files)
+(load-file (concat user-emacs-directory "env-detect.el"))
 (load-file (concat user-emacs-directory "where-to-load.el"))
+(require 'load-config-files)
 (load-config-files where-to-load)
 
 ;; 初期化にかかった時間を表示する
