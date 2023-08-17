@@ -35,5 +35,10 @@
       nt-p      (eq system-type 'windows-nt)
       meadow-p  (featurep 'meadow)
       windows-p (or cygwin-p nt-p meadow-p))
+(setq emacs-os (cond
+                  ((or darwin-p carbon-p) "mac")
+                  ((or windows-p) "win")
+                  (t "")
+                  ))
 
 (provide 'version-detect)
