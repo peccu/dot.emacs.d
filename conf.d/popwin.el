@@ -11,6 +11,7 @@
 
   (push '("*grep*" :height 80) popwin:special-display-config)
   (push '("*helm M-x*" :height 30) popwin:special-display-config)
+  (push '("*helm kill ring*" :height 30) popwin:special-display-config)
   (push '("*Codic Result*" :height 30) popwin:special-display-config)
   (push '("*Help*" :height 30) popwin:special-display-config)
   ;; (push '("*quickrun*" :height 30) popwin:special-display-config)
