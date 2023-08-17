@@ -4,7 +4,7 @@
       (cond
        ;; peccu で実行中の場合
        (peccu-p
-        "boot-a")
+        "conf.d")
        (win-env-p
         "boot-win")
        (wsl-p
