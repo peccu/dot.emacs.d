@@ -17,21 +17,14 @@
                       :background "#00ddff"
                       )
   )
-(when (or
-       peccu-p
-       ;; win-env-p
-       ;; wsl-p
-       )
-  (unless (fboundp 'color-theme-mode)
-    (package-install 'color-theme))
-  (require 'color-theme)
-  (color-theme-initialize)
-  (color-theme-dark-laptop)
-  )
 
 (when
-    ;; wsl-p or so
-    (version<= "29" emacs-version)
+    (or
+     peccu-p
+     ;; win-env-p
+     wsl-p
+     (version<= "29" emacs-version)
+     )
   ;; https://github.com/emacs-jp/replace-colorthemes
   (require-with-install 'color-theme-modern)
   (load-theme 'dark-laptop t t)
