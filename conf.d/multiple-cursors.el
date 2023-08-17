@@ -10,7 +10,7 @@
   (global-set-key (kbd "C->") 'mc/mark-next-like-this)
   (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
   (global-set-key (kbd "s-<mouse-1>") 'mc/add-cursor-on-click)
-  (setq mc/list-file (concat user-emacs-directory ".mc-lists.el"))
+  (setq mc/list-file (concat user-emacs-directory "conf.d/multiple-cursors-lists.el"))
   ;; "C-'" while multiple-cursor-mode
   (mc-hide-unmatched-lines-mode -1)
   )
