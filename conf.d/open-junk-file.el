@@ -1,53 +1,59 @@
-(require 'open-junk-file)
-(setq open-junk-file-format "~/.junk/%Y/%m/%d-%H%M%S.")
+(when (or
+       peccu-p
+       win-env-p
+       ;; wsl-p
+       )
+  (require-with-install 'open-junk-file)
+  (setq open-junk-file-format "~/.junk/%Y/%m/%d-%H%M%S.")
 
-;; https://github.com/handlename/dot-emacs/blob/master/inits/30_open-junk-file.el
-(defvar my:junk-file-dir "~/.junk")
-(defvar my:junk-file-format-base (concat my:junk-file-dir "/%Y/%m/%Y%m%d_%H%M%S"))
+  ;; https://github.com/handlename/dot-emacs/blob/master/inits/30_open-junk-file.el
+  (defvar my:junk-file-dir "~/.junk")
+  (defvar my:junk-file-format-base (concat my:junk-file-dir "/%Y/%m/%Y%m%d_%H%M%S"))
 
 ;;; open-junk-dir
-(defvar my:open-junk-dir-format (concat my:junk-file-format-base "_"))
+  (defvar my:open-junk-dir-format (concat my:junk-file-format-base "_"))
 
-(defun my:open-junk-dir ()
-  (interactive)
-  (let* ((dir-base (format-time-string my:open-junk-dir-format (current-time)))
-         (dir (read-string "Dirname: " dir-base)))
-    (make-directory dir t)
-    (find-file dir)))
+  (defun my:open-junk-dir ()
+    (interactive)
+    (let* ((dir-base (format-time-string my:open-junk-dir-format (current-time)))
+           (dir (read-string "Dirname: " dir-base)))
+      (make-directory dir t)
+      (find-file dir)))
 
 ;;; helm-junk-file
 ;;; REFS: http://qiita.com/akisute3@github/items/eba6bc64f66d278f0032
-(require 'em-glob)
-(require 'helm)
+  (require 'em-glob)
+  (require-with-install 'helm)
 
-(defun my:junk-file-list ()
-  (reverse
-   (eshell-extended-glob (concat
-                          (file-name-as-directory my:junk-file-dir)
-                          "*/*/????????_??????*"))))
+  (defun my:junk-file-list ()
+    (reverse
+     (eshell-extended-glob (concat
+                            (file-name-as-directory my:junk-file-dir)
+                            "*/*/????????_??????*"))))
 
-(defvar my:helm-source-junk-file
-      '((name . "Junk files")
-        (candidates . my:junk-file-list)
-        (type . file)))
+  (defvar my:helm-source-junk-file
+    '((name . "Junk files")
+      (candidates . my:junk-file-list)
+      (type . file)))
 
-(defun my:helm-junk-file ()
-  (interactive)
-  (helm :sources '(my:helm-source-junk-file)))
+  (defun my:helm-junk-file ()
+    (interactive)
+    (helm :sources '(my:helm-source-junk-file)))
 
 ;;; ag-junk-file
-(require 'ag)
+  (require-with-install 'ag)
 
-(defun my:ag-junk-file (query)
-  (interactive "sSearch string: ")
-  (ag query my:junk-file-dir))
+  (defun my:ag-junk-file (query)
+    (interactive "sSearch string: ")
+    (ag query my:junk-file-dir))
 
-;; ;;; key bindings
-;; (global-set-key
-;;  (kbd "C-x j")
-;;  (defhydra my:hydra-junk (:exit t)
-;;    "junk"
-;;    ("f" open-junk-file "file")
-;;    ("d" my:open-junk-dir "dir")
-;;    ("l" my:helm-junk-file "list")
-;;    ("s" my:ag-junk-file "search")))
+  ;; ;;; key bindings
+  ;; (global-set-key
+  ;;  (kbd "C-x j")
+  ;;  (defhydra my:hydra-junk (:exit t)
+  ;;    "junk"
+  ;;    ("f" open-junk-file "file")
+  ;;    ("d" my:open-junk-dir "dir")
+  ;;    ("l" my:helm-junk-file "list")
+  ;;    ("s" my:ag-junk-file "search")))
+  )
