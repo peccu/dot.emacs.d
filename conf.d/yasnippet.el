@@ -16,7 +16,7 @@
   (global-set-key [\C-\t] 'yas-expand)
   (global-set-key (kbd "<C-tab>") 'yas-expand)
 
-  (setq yas/root-directory "~/.emacs.d/snippets")
+  (setq yas/root-directory (concat user-emacs-directory "snippets"))
   ;; (setq yas/root-directory "~/.emacs.d/lisp/yasnippet/snippets")
   ;; スニペットファイルを開いたときにsnippet-modeにする
   ;; http://d.hatena.ne.jp/kitokitoki/20101211/p1#20101211fn1
