@@ -1,3 +1,8 @@
+(when (or
+       ;; peccu-p
+       ;; win-env-p
+       ;; wsl-p
+       )
 ;; (load "~/.emacs.d/conf.d/emacs-path.el")
 ;; ;; anything-howmがanything-migemoをrequireしているので
 ;; (load "~/.emacs.d/conf.d/migemo.el")
@@ -159,3 +164,4 @@
 ;; http://d.hatena.ne.jp/buzztaiki/20081115/1226760184
 (require 'descbinds-anything)
 (descbinds-anything-install)
+)
