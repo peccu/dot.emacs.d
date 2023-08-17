@@ -37,6 +37,7 @@
   ;; (ik:camerize<->decamelize "camel_or_snake")
   ;; (ik:camerize<->decamelize "CamelOrSnake")
   ;; (ik:camerize<->decamelize "camelOrSnake")
+  ;; (ik:camerize<->decamelize "camel-or-snake")
 
   (defun ik:camerize<->decamelize-thing-ad-point-or-region (s e)
     (interactive "r")
