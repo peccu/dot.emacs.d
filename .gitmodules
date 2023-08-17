@@ -16,3 +16,6 @@
 [submodule "git/git-gutter"]
 	path = git/git-gutter
 	url = https://github.com/emacsorphanage/git-gutter.git
+[submodule "git/emacs-livedown"]
+	path = git/emacs-livedown
+	url = https://github.com/shime/emacs-livedown.git
