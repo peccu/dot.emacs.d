@@ -12,6 +12,10 @@
   ;; overwrite default foreground
   ;; because of FiraCode breaks it
   (set-face-foreground 'default "white")
+  ;; same as mode-line.el
+  (set-face-attribute 'mode-line nil
+                      :background "#00ddff"
+                      )
   )
 (when (or
        peccu-p
@@ -32,6 +36,10 @@
   (require-with-install 'color-theme-modern)
   (load-theme 'dark-laptop t t)
   (enable-theme 'dark-laptop)
+  ;; same as mode-line.el
+  (set-face-attribute 'mode-line nil
+                      :background "#00ddff"
+                      )
   )
 
 ;; for print
