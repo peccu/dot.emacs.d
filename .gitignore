@@ -32,7 +32,8 @@ CVS
 git/ntlniph/
 /dotemacs/
 /el-get/
-/elpa/
+/elpa*/
+/eln-cache/
 /.session.*
 /.windows.*
 .yas-compiled-snippets.el
