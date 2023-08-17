@@ -3,7 +3,8 @@
        ;; win-env-p
        ;; wsl-p
        )
-  (require-with-install 'tdd)
+  (add-to-list 'load-path (concat user-emacs-directory "git/emacs-tdd"))
+  (require 'tdd)
   ;; tdd runs `recompile' when file saved.
   ;; `recompile' exec `compile-command'
   (add-hook 'js2-mode-hook

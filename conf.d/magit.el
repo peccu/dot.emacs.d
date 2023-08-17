@@ -5,7 +5,7 @@
        )
   ;; http://d.hatena.ne.jp/gom68/20090524/1243170341
   ;; (add-to-list 'load-path "~/.emacs.d/lisp/magit/share/emacs/site-lisp/")
-  (require 'magit)
+  (require-with-install 'magit)
   (global-set-key (kbd "C-x g") 'magit-status)
 
   ;; http://www.rubyist.net/~rubikitch/junk/2010-05-25-054318.magit.logoutputencoding.el

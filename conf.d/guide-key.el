@@ -4,7 +4,7 @@
        ;; wsl-p
        )
   ;; http://rubikitch.com/2014/08/30/guide-key/
-  (require 'guide-key)
+  (require-with-install 'guide-key)
 ;;; guilde-keyを発動させるプレフィクスキー
   (setq guide-key/guide-key-sequence
         '("C-x r"
