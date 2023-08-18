@@ -19,6 +19,10 @@
     (package-refresh-contents))
   )
 
+(defun add-submodule-to-load-path (path)
+  "set `path' like git/emacs-tdd"
+  (add-to-list 'load-path (concat user-emacs-directory path)))
+
 (defun require-with-install (package &optional filename noerror)
   (interactive)
   (unless (package-installed-p package)

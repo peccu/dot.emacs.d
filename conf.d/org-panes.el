@@ -5,7 +5,7 @@
        )
   (eval-after-load "org"
     '(progn
-       (add-to-list 'load-path (concat user-emacs-directory "git/org-panes"))
+       (add-submodule-to-load-path "git/org-panes")
        (require 'org-panes)
        (setq org-panes-overview-depth 2)
        (setq org-panes-contents-depth 3)
