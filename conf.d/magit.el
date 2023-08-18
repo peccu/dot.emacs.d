@@ -1,10 +1,12 @@
 (when (or
        peccu-p
-       win-env-p
+       ;; win-env-p
        ;; wsl-p
        )
   ;; http://d.hatena.ne.jp/gom68/20090524/1243170341
   ;; (add-to-list 'load-path "~/.emacs.d/lisp/magit/share/emacs/site-lisp/")
+  ;; (custom-set-variables
+  ;;  '(magit-cygwin-mount-points "/usr/lib/git-core"))
   (require-with-install 'magit)
   (global-set-key (kbd "C-x g") 'magit-status)
 
