@@ -18,12 +18,6 @@
       meadow-p  (featurep 'meadow)
       windows-p (or cygwin-p nt-p meadow-p))
 
-(setq emacs-os (cond
-                  ((or darwin-p carbon-p) "mac")
-                  ((or windows-p) "win")
-                  (t "")
-                  ))
-
 (setq
  peccu-p         (string-match "^peccu\\(.+\\)*$" system-name)
  win-env-p      (or
@@ -35,3 +29,10 @@
                   (getenv "WAYLAND_DISPLAY")
                   )
  )
+
+(setq emacs-os (cond
+                ((or darwin-p carbon-p) "mac")
+                ((or windows-p) "win")
+                (wsl-p "wsl")
+                (t "")
+                ))

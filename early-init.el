@@ -5,9 +5,7 @@
 (load-file (concat user-emacs-directory "lisp/version-detect.el"))
 (load-file (concat user-emacs-directory "env-detect.el"))
 
-(if wsl-p
-    (setq package-user-dir "/aws/.emacs.d/elpa-wsl")
-  (setq package-user-dir (concat user-emacs-directory "elpa-" emacs-version "-" emacs-os)))
+(setq package-user-dir (concat user-emacs-directory "elpa-" emacs-version "-" emacs-os))
 
 ;; https://uwabami.github.io/cc-env/Emacs.html
 (push '(vertical-scroll-bars . nil) default-frame-alist)
