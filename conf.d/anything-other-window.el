@@ -3,5 +3,7 @@
        ;; win-env-p
        ;; wsl-p
        )
-  (require 'anything-c-source-other-windows)
+  (when (version< emacs-version "29")
+    (require 'anything-c-source-other-windows)
+    )
   )
