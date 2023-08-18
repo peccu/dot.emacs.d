@@ -3,7 +3,7 @@
        ;; win-env-p
        ;; wsl-p
        )
-  (add-to-list 'load-path (concat user-emacs-directory "git/tern/emacs/"))
+  (add-submodule-to-load-path "git/tern/emacs/")
   (require 'tern)
   ;; (add-hook 'js2-mode-hook (lambda () (tern-mode t)))
   ;; (add-hook 'js-mode-hook (lambda () (tern-mode t)))

@@ -3,7 +3,7 @@
        ;; win-env-p
        ;; wsl-p
        )
-  (add-to-list 'load-path (concat user-emacs-directory "git/emacs-tdd"))
+  (add-submodule-to-load-path "git/emacs-tdd")
   (require 'tdd)
   ;; tdd runs `recompile' when file saved.
   ;; `recompile' exec `compile-command'
