@@ -8,7 +8,7 @@
        (win-env-p
         "conf.d")
        (wsl-p
-        "boot-wsl")
+        "conf.d")
        ;; 指定されていないマシンで実行中の場合
        (t
         (progn
