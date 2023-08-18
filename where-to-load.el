@@ -6,7 +6,7 @@
        (peccu-p
         "conf.d")
        (win-env-p
-        "boot-win")
+        "conf.d")
        (wsl-p
         "boot-wsl")
        ;; 指定されていないマシンで実行中の場合
