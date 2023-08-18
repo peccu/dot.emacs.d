@@ -19,11 +19,11 @@
     (package-refresh-contents))
   )
 
-(defun require-with-install (package)
+(defun require-with-install (package &optional filename noerror)
   (interactive)
   (unless (package-installed-p package)
     (package-install package))
-  (require package))
+  (require package filename noerror))
 
 ;; for version< emacs-version 29
 (require-with-install 'use-package)
