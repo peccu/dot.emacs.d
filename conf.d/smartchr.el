@@ -1,8 +1,9 @@
 (when (or
-       ;; peccu-p
-       ;; win-env-p
-       ;; wsl-p
+       peccu-p
+       win-env-p
+       wsl-p
        )
+  (add-submodule-to-load-path "git/emacs-smartchr/")
   (require 'smartchr)
   (global-set-key (kbd "=") (smartchr '(" = " "=" " => " " == " " != ")))
 
