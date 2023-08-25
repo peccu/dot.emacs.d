@@ -22,3 +22,6 @@
 [submodule "git/emacs-tdd"]
 	path = git/emacs-tdd
 	url = https://github.com/jorgenschaefer/emacs-tdd.git
+[submodule "git/emacs-smartchr"]
+	path = git/emacs-smartchr
+	url = https://github.com/imakado/emacs-smartchr.git
