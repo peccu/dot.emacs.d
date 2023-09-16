@@ -1,5 +1,5 @@
 (when (or
-       ;; peccu-p
+       peccu-p
        win-env-p
        ;; wsl-p
        )
@@ -209,6 +209,7 @@
   ;; (add-to-list 'company-backends 'company-tern)
 
 
+  (require-with-install 'all-the-icons)
   (when (require-with-install 'company-box nil t)
     (add-hook 'company-mode-hook 'company-box-mode)
     (setq company-box-icons-elisp
