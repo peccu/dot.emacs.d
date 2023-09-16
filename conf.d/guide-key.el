@@ -23,6 +23,7 @@
           "M-s a"
           "M-s f"
           "C-c !"
+          "s-l"
           ;; org-modeではC-c C-xも対象にする
           (org-mode "C-c C-x")
           ;; outline-minor-modeではC-c @も対象にする
