@@ -73,6 +73,12 @@
   (my-lsp-install-server 'ts-ls)
   (add-hook 'typescript-mode-hook 'lsp)
 
+  ;; tailwindcss
+  (require-with-install 'lsp-tailwindcss)
+  (my-lsp-install-server 'tailwindcss)
+  (when (executable-find "rustywind")
+    (add-hook 'before-save-hook 'lsp-tailwindcss-rustywind-before-save))
+
   ;; Vue 3
   (my-lsp-install-server 'vue-semantic-server)
   (add-hook 'web-mode-hook 'lsp)
