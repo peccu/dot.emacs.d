@@ -25,3 +25,6 @@
 [submodule "git/emacs-smartchr"]
 	path = git/emacs-smartchr
 	url = https://github.com/imakado/emacs-smartchr.git
+[submodule "git/vue-mode"]
+	path = git/vue-mode
+	url = https://github.com/peccu/vue-mode.git
