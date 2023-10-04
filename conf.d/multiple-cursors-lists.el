@@ -19,11 +19,13 @@
         ee-duplicate-this-line
         electric-newline-and-maybe-indent
         elisp-last-sexp-toggle-display
+        emmet-expand-line
         ignore
         ik:camerize<->decamelize-thing-ad-point-or-region
         indent-for-tab-command
         insert-date
         kill-region
+        lsp-ui-doc--handle-mouse-movement
         markdown-outdent-or-delete
         org-cycle
         org-delete-char
@@ -36,6 +38,7 @@
         powershell-indent-line
         seq-end
         seq-home
+        sgml-slash
         sh-assignment
         wdired--self-insert
         wdired-downcase-word
