@@ -51,5 +51,8 @@
       (around dired-sort-other-h activate)
     (ad-set-arg 0 (concat (ad-get-arg 0) "h"))
     ad-do-it
-    (setq dired-actual-switches (dired-replace-in-string "h" "" dired-actual-switches)))
+    ;; ‘dired-replace-in-string’ is an obsolete function (as of 28.1); use ‘replace-regexp-in-string’ instead.
+    ;; (setq dired-actual-switches (dired-replace-in-string "h" "" dired-actual-switches))
+    (setq dired-actual-switches (replace-regexp-in-string "h" "" dired-actual-switches))
+    )
   )
