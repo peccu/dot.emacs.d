@@ -76,6 +76,9 @@
   ;; tailwindcss
   (require-with-install 'lsp-tailwindcss)
   (my-lsp-install-server 'tailwindcss)
+  ;; launch in .vue
+  ;; https://github.com/emacs-lsp/lsp-mode/issues/3513
+  (custom-set-variables '(lsp-tailwindcss-add-on-mode t))
   (when (executable-find "rustywind")
     (add-hook 'before-save-hook 'lsp-tailwindcss-rustywind-before-save))
 
