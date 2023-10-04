@@ -14,7 +14,7 @@
       (tide-hl-identifier-mode +1)
       )
     (flycheck-mode +1)
-    (setq flycheck-check-syntax-automatically '(save mode-enabled))
+    ;; (setq flycheck-check-syntax-automatically '(save mode-enabled))
     (eldoc-mode +1)
     (setq js-indent-level 2)
     (setq js2-basic-offset 2)
