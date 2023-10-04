@@ -6,7 +6,7 @@
   (when (version<= "29" emacs-version)
     ;; melpa version does not support emacs 29
     ;; https://github.com/emacsorphanage/git-gutter/commit/c6547febbf9bed870df23254757296b6dd9a349a
-    (add-to-list 'load-path "~/.emacs.d/git/git-gutter")
+    (add-submodule-to-load-path "git/git-gutter")
     )
   ;; (require 'git-gutter)
 
