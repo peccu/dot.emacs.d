@@ -1,7 +1,7 @@
 (when (or
-       ;; peccu-p
+       peccu-p
        win-env-p
-       ;; wsl-p
+       wsl-p
        )
   ;; customize の出力先
   ;; cf.http://www1.ocn.ne.jp/~ruby11/linux/emacs4.html
