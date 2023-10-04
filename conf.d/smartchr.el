@@ -15,8 +15,21 @@
   ;;   \\end{equation}
   ;; #+end_latex
   ;; " "$")))
-  ;; (global-set-key (kbd "{")
-  ;;              (smartchr '("{ `!!' }" "{ \"`!!'\" }" "{")))
+  ;; (global-set-key (kbd "{") (smartchr '("{" "{`!!'}")))
+  (global-set-key (kbd "\"") (smartchr '("\"" "\"`!!'\"")))
+  (global-set-key (kbd "'") (smartchr '("'" "'`!!''")))
+  ;; (global-set-key (kbd "(") (smartchr '("(" "(`!!')")))
+
+  (defun my-smartchr-keybindings-js ()
+    ;; (local-set-key (kbd "{") (smartchr '("{" my-smartchr-braces "{`!!'}")))
+    (local-set-key (kbd "(") (smartchr '("(" "(`!!')" "() => {}")))
+    )
+  (dolist (hook (list
+                 'js2-mode-hook
+                 'web-mode-hook
+                 'typescript-mode-hook
+                 ))
+    (add-hook hook 'my-smartchr-keybindings-js))
 
 ;;; http://tech.kayac.com/archive/emacs-tips-smartchr.html
   ;; (global-set-key (kbd ">") (smartchr '(">" " => " " => '`!!''" " => \"`!!'\"")))
@@ -71,26 +84,26 @@
   ;; (define-key term-mode-map (kbd "C-c C-k") 'term-toggle-sub-mode)
 
   ;; http://d.hatena.ne.jp/pogin/20111230/1325229996
-  ;; (defun my-smartchr-braces ()
-  ;;   "Insert a pair of braces like below.
-  ;; \n    {\n    `!!'\n}"
-  ;;   ;; foo {
-  ;;   ;;     `!!'
-  ;;   ;; }
-  ;;   (lexical-let (beg end)
-  ;;     (smartchr-make-struct
-  ;;      :insert-fn (lambda ()
-  ;;                   (setq beg (point))
-  ;;                   (insert "{\n\n}")
-  ;;                   (indent-region beg (point))
-  ;;                   (forward-line -1)
-  ;;                   (indent-according-to-mode)
-  ;;                   (goto-char (point-at-eol))
-  ;;                   (setq end (save-excursion
-  ;;                               (re-search-forward "[[:space:][:cntrl:]]+}" nil t))))
-  ;;      :cleanup-fn (lambda ()
-  ;;                    (delete-region beg end))
-  ;;      )))
+  (defun my-smartchr-braces ()
+    "Insert a pair of braces like below.
+  \n    {\n    `!!'\n}"
+    ;; foo {
+    ;;     `!!'
+    ;; }
+    (lexical-let (beg end)
+      (smartchr-make-struct
+       :insert-fn (lambda ()
+                    (setq beg (point))
+                    (insert "{\n\n}")
+                    (indent-region beg (point))
+                    (forward-line -1)
+                    (indent-according-to-mode)
+                    (goto-char (point-at-eol))
+                    (setq end (save-excursion
+                                (re-search-forward "[[:space:][:cntrl:]]+}" nil t))))
+       :cleanup-fn (lambda ()
+                     (delete-region beg end))
+       )))
 
   ;; (defun my-smartchr-comment ()
   ;;   "Insert a multiline comment like below.
@@ -174,6 +187,7 @@
   ;;                'text-mode-hook
   ;;                ))
   ;;   (add-hook hook 'my-smartchr-keybindings))
+  ;; (add-hook 'js2-mode-hook 'my-smartchr-keybindings)
 
   ;; (dolist (hook (list
   ;;                'lisp-mode-hook
