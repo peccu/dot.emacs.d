@@ -85,5 +85,31 @@
   ;; Vue 3
   (my-lsp-install-server 'vue-semantic-server)
   (add-hook 'web-mode-hook 'lsp)
+  ;; in vue-mode.el
+  ;; (add-hook 'vue-mode-hook 'lsp)
+
+;;   (defface company-box-background
+;;     '((t :inherit company-tooltip))
+;;     "Face used for frame's background.
+;; Only the 'background' color is used in this face."
+;;     :group 'company-box)
+
+  ;; (defface company-tooltip
+  ;;   '((((class color) (min-colors 88) (background light))
+  ;;      (:foreground "black" :background "cornsilk"))
+  ;;     (((class color) (min-colors 88) (background dark))
+  ;;      ;; (:background "gray26")
+  ;;      (:foreground "white" :background "black"))
+  ;;     (t (:foreground "black" :background "yellow")))
+  ;;   ;; https://www.reddit.com/r/emacs/comments/gfq4dk/how_can_i_change_companybox_background_and/
+  ;;   ;; '((default :foreground "blue")
+  ;;   ;;   (((class color) (min-colors 88) (background light))
+  ;;   ;;    (:background "black"))
+  ;;   ;;   (((class color) (min-colors 88) (background dark))
+  ;;   ;;    (:background "yellow")))
+  ;;   "Face used for the tooltip.")
+
+  ;; https://github.com/emacs-lsp/lsp-ui/issues/180
+  ;; lsp-ui-doc-background
   t
   )
