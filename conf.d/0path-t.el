@@ -6,7 +6,7 @@
               ;; "/opt/local/bin"
               ;; "/sw/bin"
               "/usr/local/bin"
-              (expand-file-name "~/.emacs.d/bin")
+              (expand-file-name (concat user-emacs-directory "bin"))
               (expand-file-name "~/bin")
               (expand-file-name "~/Library/Haskell/bin")
               (expand-file-name "~/../../AppData/Local/Programs/msys64/usr/bin")

@@ -3,7 +3,7 @@
        win-env-p
        ;; wsl-p
        )
-  ;; (add-to-list 'load-path "~/.emacs.d/lisp/eev-current")
+  ;; (add-to-list 'load-path (concat user-emacs-directory "lisp/eev-current"))
   (unless (package-installed-p 'eev)
     (package-install 'eev))
 

@@ -3,10 +3,10 @@
        ;; win-env-p
        ;; wsl-p
        )
-;; (load "~/.emacs.d/conf.d/emacs-path.el")
+;; (load (concat user-emacs-directory "conf.d/emacs-path.el"))
 ;; ;; anything-howmがanything-migemoをrequireしているので
-;; (load "~/.emacs.d/conf.d/migemo.el")
-;; (load "~/.emacs.d/conf.d/anything-howm.el")
+;; (load (concat user-emacs-directory "conf.d/migemo.el"))
+;; (load (concat user-emacs-directory "conf.d/anything-howm.el"))
 
 ;; stop warning
 ;; https://myhobby20xx.hatenadiary.org/entry/20110308/1299593824

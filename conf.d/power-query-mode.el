@@ -3,5 +3,6 @@
        win-env-p
        ;; wsl-p
        )
-  (add-to-list 'load-path "~/.emacs.d/git/power-query-mode")
+
+  (add-submodule-to-load-path "git/power-query-mode")
   )

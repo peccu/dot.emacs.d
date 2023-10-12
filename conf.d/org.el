@@ -3,8 +3,8 @@
        win-env-p
        ;; wsl-p
        )
-  ;; (add-to-list 'load-path "~/.emacs.d/lisp/org/lisp/")
-  ;; (add-to-list 'load-path "~/.emacs.d/lisp/org/contrib/babel/langs/")
+  ;; (add-to-list 'load-path (concat user-emacs-directory "lisp/org/lisp/"))
+  ;; (add-to-list 'load-path (concat user-emacs-directory "lisp/org/contrib/babel/langs/"))
   ;; ->melpaでelfeed-orgを入れたら入ったっぽい
   (require-with-install 'org)
   ;; org-modeの初期化
@@ -938,7 +938,7 @@ decides which time to use."
   ;; (org-clock-persistence-insinuate)
 
   ;; add contrib for ox-taskjuggler
-  (add-to-list 'load-path "~/.emacs.d/lisp/org/contrib/lisp")
+  (add-to-list 'load-path (concat user-emacs-directory "lisp/org/contrib/lisp"))
 
 ;;; Org babel
   ;; (require 'ob-shell)

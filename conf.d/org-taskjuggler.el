@@ -5,7 +5,7 @@
        )
   ;; ;; add contrib for ox-taskjuggler
   ;; ;; with downlowded from https://orgmode.org
-  ;; (add-to-list 'load-path "~/.emacs.d/lisp/org/contrib/lisp")
+  ;; (add-to-list 'load-path (concat user-emacs-directory "lisp/org/contrib/lisp"))
   ;; need sudo gem install taskjuggler
 
   ;; https://github.com/emacsmirror/org/blob/master/contrib/lisp/ox-taskjuggler.el

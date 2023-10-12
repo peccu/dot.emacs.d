@@ -4,7 +4,7 @@
        ;; wsl-p
        )
   ;; http://d.hatena.ne.jp/gom68/20090524/1243170341
-  ;; (add-to-list 'load-path "~/.emacs.d/lisp/magit/share/emacs/site-lisp/")
+  ;; (add-to-list 'load-path (concat user-emacs-directory "lisp/magit/share/emacs/site-lisp"))
   ;; (custom-set-variables
   ;;  '(magit-cygwin-mount-points "/usr/lib/git-core"))
   (require-with-install 'magit)
