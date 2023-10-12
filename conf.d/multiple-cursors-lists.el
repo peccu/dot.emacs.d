@@ -31,6 +31,7 @@
         org-delete-char
         org-force-self-insert
         org-kill-line
+        org-metaleft
         org-metaright
         org-open-line
         org-self-insert-command
@@ -43,6 +44,7 @@
         wdired--self-insert
         wdired-downcase-word
         wdired-finish-edit
+        web-mode-comment-or-uncomment
         yaml-electric-dash-and-dot
         ))
 
