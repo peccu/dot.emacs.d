@@ -3,10 +3,12 @@
        win-env-p
        wsl-p
        )
-  ;; packages version
+  ;;; packages version
   ;; (require-with-install 'xxx-mode)
-  ;; submodule version
+  ;;; submodule version
   ;; (add-submodule-to-load-path "git/xxx-mode")
   ;; (require 'xxx-mode)
+  ;;; load version
+  ;; (load (concat user-emacs-directory "listp/xxx-mode.el"))
 
   )
