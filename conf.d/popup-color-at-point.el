@@ -1,8 +1,8 @@
 (when (or
-       ;; peccu-p
+       peccu-p
        win-env-p
-       ;; wsl-p
+       wsl-p
        )
-  (load "~/.emacs.d/lisp/popup-color-at-point.el")
+  (load (concat user-emacs-directory "lisp/popup-color-at-point.el"))
   (global-set-key (kbd "C-c c") 'popup-color-at-point)
   )
