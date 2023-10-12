@@ -255,7 +255,7 @@
 
   ;; デフォルトの署名ファイル
   ;; 各ケースの設定は.mew.elに
-  (setq mew-signature-file "~/.emacs.d/.signature")
+  (setq mew-signature-file (concat user-emacs-directory ".signature"))
   ;; 署名の自動挿入
   ;; http://takeno.iee.niit.ac.jp/~shige/unix/memo/unix-memo.html#20080505
   (setq mew-signature-insert-last t)

@@ -3,7 +3,7 @@
        win-env-p
        wsl-p
        )
-  ;; (add-to-list 'load-path "~/.emacs.d//git/tramp/lisp")
+  ;; (add-submodule-to-load-path "git/tramp/lisp")
   (require 'tramp)
 
   (add-to-list 'tramp-remote-process-environment

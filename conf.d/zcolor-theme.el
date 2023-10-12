@@ -3,7 +3,7 @@
 ;;        win-env-p
 ;;        ;; wsl-p
 ;;        )
-;;   ;; (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+;;   ;; (add-to-list 'custom-theme-load-path (concat user-emacs-directory "themes/"))
 ;;   ;; (load-theme 'zenburn t)
 ;;   (add-to-list 'load-path (concat user-emacs-directory "lisp/color-theme-6.6.1"))
 ;;   (require 'color-theme)
