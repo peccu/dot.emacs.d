@@ -46,11 +46,11 @@
         wdired-downcase-word
         wdired-finish-edit
         web-mode-comment-or-uncomment
+        yaml-electric-backspace
         yaml-electric-dash-and-dot
         ))
 
 (setq mc/cmds-to-run-once
       '(
         mouse-set-region
-        yaml-electric-backspace
         ))
