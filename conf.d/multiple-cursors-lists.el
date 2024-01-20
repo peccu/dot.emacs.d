@@ -27,7 +27,6 @@
         kill-region
         lsp-ui-doc--handle-mouse-movement
         markdown-outdent-or-delete
-        open-rectangle
         org-cycle
         org-delete-char
         org-force-self-insert
