@@ -55,6 +55,8 @@
   ;; (require 'helm-w3m)
   ;; (require 'helm-yaoddmuse)
   (require-with-install 'helm)
+  ;; <M-f2> twice to launch (in bm.el)
+  (require-with-install 'helm-bm)
 
 
 
