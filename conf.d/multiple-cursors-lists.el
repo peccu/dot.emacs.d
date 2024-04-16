@@ -3,6 +3,7 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        anzu-query-replace
         backward-up-list
         c-electric-brace
         c-electric-delete-forward
@@ -11,6 +12,7 @@
         c-electric-semi&comma
         c-electric-slash
         c-indent-line-or-region
+        coffee-dedent-line-backspace
         comment-dwim
         company-indent-or-complete-common
         count-words-region
@@ -27,6 +29,7 @@
         kill-region
         lsp-ui-doc--handle-mouse-movement
         markdown-outdent-or-delete
+        mouse-set-region
         org-cycle
         org-delete-char
         org-force-self-insert
@@ -37,6 +40,7 @@
         org-self-insert-command
         org-yank
         powershell-indent-line
+        rst-adjust
         seq-end
         seq-home
         sgml-slash
@@ -51,5 +55,4 @@
 
 (setq mc/cmds-to-run-once
       '(
-        mouse-set-region
         ))
