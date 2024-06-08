@@ -1,7 +1,7 @@
 (when (or
        peccu-p
-       ;; win-env-p
-       ;; wsl-p
+       win-env-p
+       wsl-p
        )
   ;; http://murakan.cocolog-nifty.com/blog/2009/01/emacs-tips-1d45.html
   ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -21,7 +21,7 @@
   (defface hlline-face
     '((((class color)
         (background dark))
-       (:background "SkyBlue3"))
+       (:background "DodgerBlue3"))
       (((class color)
         (background light))
        (:background "dark gray"))
