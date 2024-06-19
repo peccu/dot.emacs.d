@@ -982,6 +982,7 @@ decides which time to use."
   ;; but using org-my-capture.el
   ;; show inline images
   (add-hook 'org-mode-hook 'org-display-inline-images)
+  ;; M-x org-toggle-inline-images (C-c C-x C-v)
   ;; M-x org-display-inline-images
   ;; M-x org-remove-inline-images
 

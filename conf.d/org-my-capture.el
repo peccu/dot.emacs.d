@@ -30,8 +30,8 @@ and insert the org-mode image link at point."
   (global-set-key (kbd "M-V") 'my/insert-image-like-logsec)
 
   ;; you can show image inline in org-mode
-  ;; M-x org-display-inline-images
   ;; (add-hook 'org-mode-hook 'org-display-inline-images)
-  ;; hide it via
+  ;; M-x org-toggle-inline-images (C-c C-x C-v)
+  ;; M-x org-display-inline-images
   ;; M-x org-remove-inline-images
   )
