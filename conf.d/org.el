@@ -951,4 +951,38 @@ decides which time to use."
   (when (version<= "28" emacs-version)
     (setq org-startup-folded t)
     )
+
+  ;; yank media config
+  ;; but current emacs in windows looks not working
+  (when (version<= "29" emacs-version)
+    ;; https://github.com/NapoleonWils0n/cerberus/blob/master/emacs/yank-media.org
+
+    ;; yank-media--registered-handlers org mode
+    (with-eval-after-load 'org
+      (setq yank-media--registered-handlers '(("image/.*" . #'org-mode--image-yank-handler))))
+
+    ;; org mode image yank handler
+    (yank-media-handler "image/.*" #'org-mode--image-yank-handler)
+
+    ;; org-mode insert image as file link from the clipboard
+    (defun org-mode--image-yank-handler (type image)
+      (let ((file (read-file-name (format "Save %s image to: " type))))
+        (when (file-directory-p file)
+          (user-error "%s is a directory"))
+        (when (and (file-exists-p file)
+                   (not (yes-or-no-p (format "%s exists; overwrite?" file))))
+          (user-error "%s exists"))
+        (with-temp-buffer
+          (set-buffer-multibyte nil)
+          (insert image)
+          (write-region (point-min) (point-max) file))
+        (insert (format "[[file:%s]]\n" (file-relative-name file)))))
+    )
+
+  ;; but using org-my-capture.el
+  ;; show inline images
+  (add-hook 'org-mode-hook 'org-display-inline-images)
+  ;; M-x org-display-inline-images
+  ;; M-x org-remove-inline-images
+
   )
