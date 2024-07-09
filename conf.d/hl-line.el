@@ -21,12 +21,11 @@
   (defface hlline-face
     '((((class color)
         (background dark))
-       (:background "DodgerBlue3"))
+       (:background "DodgerBlue3" :extend t))
       (((class color)
         (background light))
-       (:background "dark gray"))
-      (t
-       ()))
+       (:background "dark gray" :extend t))
+      (t (:bold t)))
     "*Face used by hl-line.")
   ;; (set-face-background 'hlline-face "SkyBlue3")
   (setq hl-line-face 'hlline-face)
