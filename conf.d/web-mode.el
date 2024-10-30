@@ -32,15 +32,15 @@
     (setq web-mode-indent-style 2)
     ;; Left padding
     ;; For <style> parts
-    (setq web-mode-style-padding 1)
+    (setq web-mode-style-padding 0)
     ;; For <script> parts
-    (setq web-mode-script-padding 1)
+    (setq web-mode-script-padding 0)
     ;; For multilines blocks
     (setq web-mode-block-padding 0)
     ;; Comments
     ;; You can choose to comment with server comment instead of client (HTML/CSS/Js) comment with
     ;; テンプレートでテンプレート用のコメントを使うなら2
-    (setq web-mode-comment-style 1)
+    (setq web-mode-comment-style 2)
     ;; and more ... http://web-mode.org/
 
     ;; web-mode-element-next/previousが使いにくいので
