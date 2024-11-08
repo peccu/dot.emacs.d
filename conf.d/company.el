@@ -7,7 +7,9 @@
   ;; https://qiita.com/kod314/items/3a31719db27a166d2ec1
   (setq company-minimum-prefix-length 2)
   (setq company-selection-wrap-around t)
-  (setq completion-ignore-case t)
+  (setq completion-ignore-case nil)
+  ;; https://emacs.stackexchange.com/questions/10837/how-to-make-company-mode-be-case-sensitive-on-plain-text/10838#10838
+  (setq company-dabbrev-downcase nil)
   (define-key company-active-map (kbd "C-n") 'company-select-next)
   (define-key company-active-map (kbd "C-p") 'company-select-previous)
   (define-key company-active-map (kbd "<tab>") 'company-complete-selection)
