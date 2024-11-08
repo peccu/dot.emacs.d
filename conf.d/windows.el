@@ -107,7 +107,7 @@
   (require 'helm-windows)
   (define-key win:switch-map "=" 'helm-windows)
   (when (or
-         ;; peccu-p
+         peccu-p
          win-env-p
          ;; wsl-p
          )
