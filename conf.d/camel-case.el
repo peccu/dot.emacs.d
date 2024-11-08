@@ -3,6 +3,54 @@
        win-env-p
        wsl-p
        )
+
+  (defun snake->kebab (str)
+    (replace-regexp-in-string "_" "-" str))
+  (defun kebab->pascal (str)
+    (let ((los
+           (mapcar 'capitalize (split-string str "-" t))))
+      (mapconcat 'identity los "")))
+  (defun pascal->camel (str)
+    (let ((words (split-string (camel->snake str) "_" t)))
+      (let ((los
+             (append (list (car words))
+                     (mapcar 'capitalize (rest words)))))
+        (mapconcat 'identity los "")
+        )))
+  (defun camel->snake (str)
+    (ik:decamelize str))
+
+  (defun cycle-case (str)
+    (let ((case-fold-search nil))
+      (cond
+       ((string-match "_" str)          ;snake_case -> kebab-case
+        (snake->kebab str))
+       ((string-match "-" str)          ;kebab-case -> PascalCase
+        (kebab->pascal str))
+       ((string-match "^[A-Z]" str)     ;PascalCase -> camelCase
+        (pascal->camel str))
+       (t                               ;camelCase to snake_case
+        (camel->snake str)))))
+  ;; (insert (concat " ;; => " (cycle-case "camel_or_snake"))) ;; => camel-or-snake
+  ;; (insert (concat " ;; => " (cycle-case "camel-or-snake"))) ;; => CamelOrSnake
+  ;; (insert (concat " ;; => " (cycle-case "CamelOrSnake"))) ;; => camelOrSnake
+  ;; (insert (concat " ;; => " (cycle-case "camelOrSnake"))) ;; => camel_or_snake
+  ;; test CamelOrSnake
+
+  (defun cycle-case-thing-at-point-or-region (s e)
+    (interactive "r")
+    (unless (use-region-p)
+      (let ((bounds (bounds-of-thing-at-point 'symbol)))
+        (setq s (car bounds))
+        (setq e (cdr bounds))))
+    (let* ((buf-str (buffer-substring-no-properties s e))
+           (str (cycle-case buf-str)))
+      (delete-region s e)
+      (insert str)))
+
+  (global-set-key (kbd "M-C") 'cycle-case-thing-at-point-or-region)
+  (define-key global-map "\M-C" 'cycle-case-thing-at-point-or-region)
+
   ;; http://d.hatena.ne.jp/IMAKADO/20091209/1260323922
   ;; http://stackoverflow.com/questions/9288181/converting-from-camelcase-to-in-emacs
   ;; merged
@@ -50,8 +98,8 @@
       (delete-region s e)
       (insert str)))
 
-  (global-set-key (kbd "M-C") 'ik:camerize<->decamelize-thing-ad-point-or-region)
-  (define-key global-map "\M-C" 'ik:camerize<->decamelize-thing-ad-point-or-region)
+  ;; (global-set-key (kbd "M-C") 'ik:camerize<->decamelize-thing-ad-point-or-region)
+  ;; (define-key global-map "\M-C" 'ik:camerize<->decamelize-thing-ad-point-or-region)
 
 
   ;; http://stackoverflow.com/questions/9288181/converting-from-camelcase-to-in-emacs
