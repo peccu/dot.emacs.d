@@ -64,6 +64,7 @@
     ;; ;; Heredoc (cf. PHP strings) fontification (when the identifier is <<<EOTHTML or <<<EOTJAVASCRIPT)
     ;; (setq web-mode-enable-heredoc-fontification t)
     (emmet-mode)
+    (auto-highlight-symbol-mode)
     )
   (add-hook 'web-mode-hook 'web-mode-hook)
   (require 'company)
