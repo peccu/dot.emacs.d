@@ -7,12 +7,7 @@
   (require-with-install 'ts-comint)
   (require-with-install 'tide)
 
-  (defun setup-tide-mode ()
-    (interactive)
-    (when  peccu-p
-      (tide-setup)
-      (tide-hl-identifier-mode +1)
-      )
+  (defun setup-ts-general ()
     (flycheck-mode +1)
     ;; (setq flycheck-check-syntax-automatically '(save mode-enabled))
     (eldoc-mode +1)
@@ -25,11 +20,21 @@
     (company-mode +1)
     (auto-highlight-symbol-mode))
 
+  (defun setup-tide-mode ()
+    (interactive)
+    (when  peccu-p
+      (tide-setup)
+      (tide-hl-identifier-mode +1)
+      )
+    (setup-ts-general))
+
   ;; aligns annotation to the right hand side
   (setq company-tooltip-align-annotations t)
   ;; formats the buffer before saving
   (add-hook 'before-save-hook 'tide-format-before-save)
-  (add-hook 'typescript-mode-hook #'setup-tide-mode)
+  (if (executable-find "node")
+      (add-hook 'typescript-mode-hook #'setup-tide-mode)
+    (add-hook 'typescript-mode-hook #'setup-ts-general))
 
   ;; format options
   (setq tide-format-options
