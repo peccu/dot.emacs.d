@@ -45,9 +45,11 @@
         seq-home
         sgml-slash
         sh-assignment
+        transpose-words
         wdired--self-insert
         wdired-downcase-word
         wdired-finish-edit
+        wdired-next-line
         web-mode-comment-or-uncomment
         yaml-electric-backspace
         yaml-electric-dash-and-dot
@@ -55,4 +57,5 @@
 
 (setq mc/cmds-to-run-once
       '(
+        mac-mwheel-scroll
         ))
