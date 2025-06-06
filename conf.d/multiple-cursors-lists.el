@@ -18,6 +18,7 @@
         count-words-region
         dabbrev-expand
         delete-horizontal-space
+        delete-indentation
         ee-duplicate-this-line
         electric-newline-and-maybe-indent
         elisp-last-sexp-toggle-display
@@ -38,9 +39,11 @@
         org-metaright
         org-open-line
         org-self-insert-command
+        org-transpose-words
         org-yank
         powershell-indent-line
         rst-adjust
+        select-window-6
         seq-end
         seq-home
         sgml-slash
@@ -57,5 +60,6 @@
 
 (setq mc/cmds-to-run-once
       '(
+        counter-other-window
         mac-mwheel-scroll
         ))
