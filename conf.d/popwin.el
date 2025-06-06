@@ -39,6 +39,7 @@
   (push '("*helm kill ring*" :height 30) popwin:special-display-config)
   (push '("*Codic Result*" :height 30) popwin:special-display-config)
   (push '("*Help*" :height 30) popwin:special-display-config)
+  (push '("*Flutter*" :height 30 :stick t) popwin:special-display-config)
   ;; (push '("*quickrun*" :height 30) popwin:special-display-config)
 
   (push '("^\\*ag.*\\*" :regexp t :height 80) popwin:special-display-config)
