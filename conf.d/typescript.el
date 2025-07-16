@@ -30,8 +30,9 @@
 
   ;; aligns annotation to the right hand side
   (setq company-tooltip-align-annotations t)
-  ;; formats the buffer before saving
-  (add-hook 'before-save-hook 'tide-format-before-save)
+  ;; ;; formats the buffer before saving
+  ;; (add-hook 'before-save-hook 'tide-format-before-save)
+  ;; (remove-hook 'before-save-hook 'tide-format-before-save)
   (if (executable-find "node")
       (add-hook 'typescript-mode-hook #'setup-tide-mode)
     (add-hook 'typescript-mode-hook #'setup-ts-general))
