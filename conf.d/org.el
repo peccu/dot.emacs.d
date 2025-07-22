@@ -986,4 +986,9 @@ decides which time to use."
   ;; M-x org-display-inline-images
   ;; M-x org-remove-inline-images
 
+  ;; again from ./org-my-capture.el
+  (add-hook 'org-mode-hook
+            (lambda ()
+              (message "org-mode-hook running from org.el")
+              (yank-media-handler "image/.*" #'my/yank-org-mode-image-handler)))
   )
