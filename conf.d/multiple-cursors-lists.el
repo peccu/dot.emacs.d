@@ -34,6 +34,7 @@
         org-cycle
         org-delete-char
         org-force-self-insert
+        org-insert-heading-respect-content
         org-kill-line
         org-metaleft
         org-metaright
