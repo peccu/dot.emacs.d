@@ -940,13 +940,6 @@ decides which time to use."
   ;; add contrib for ox-taskjuggler
   (add-to-list 'load-path (concat user-emacs-directory "lisp/org/contrib/lisp"))
 
-;;; Org babel
-  ;; (require 'ob-shell)
-  (setq org-confirm-babel-evaluate nil)
-  (org-babel-do-load-languages
-   'org-babel-load-languages
-   '((shell . t)))
-
   ;; after Emacs 28, default value is changed to showeverything
   (when (version<= "28" emacs-version)
     (setq org-startup-folded t)
