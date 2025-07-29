@@ -148,4 +148,11 @@
 
   ;; 設定ファイルの保存先
   (setq win:configuration-file (concat user-emacs-directory ".windows"))
+
+  ;; フレームタイトルにも名前を表示する
+  ;; win:mode-string に [e] などが入っていて、ウィンドウ切り替え時に更新される
+  (setq frame-title-format
+        '(:eval (format "%%b - Emacs at %s %s"
+                        system-name
+                        win:mode-string)))
   )
