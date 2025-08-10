@@ -18,10 +18,17 @@
       meadow-p  (featurep 'meadow)
       windows-p (or cygwin-p nt-p meadow-p))
 
+;; new mac does not return hostname via (system-name)
+;; reading hostname from command
+;; https://discussions.apple.com/thread/255761651?answerId=260762382022&sortBy=rank#260762382022
+(setq my-hostname (if darwin-p
+                      (string-trim (shell-command-to-string "scutil --get LocalHostName"))
+                    (system-name)))
+
 (setq
- peccu-p         (string-match "^peccu\\(.+\\)*$" system-name)
+ peccu-p         (string-match "^peccu\\(.+\\)*$" my-hostname)
  win-env-p      (or
-                 (string-match "^SOME-HOSTNAME$" system-name)
+                 (string-match "^SOME-HOSTNAME$" my-hostname)
                  )
  wsl-p           (or
                   (and (getenv "TOOLTYPE") (string-match "tool" (getenv "TOOLTYPE")))
