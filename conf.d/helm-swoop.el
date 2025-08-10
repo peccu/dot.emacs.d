@@ -1,5 +1,5 @@
 (when (or
-       peccu-p
+       ;; peccu-p
        win-env-p
        ;; wsl-p
        )
