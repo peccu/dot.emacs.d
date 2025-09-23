@@ -21,14 +21,22 @@
      ("melpa" . "https://melpa.org/packages/")
      ("gnu" . "https://elpa.gnu.org/packages/")))
  '(package-selected-packages
-   '(ag alchemist all-the-icons anzu auto-highlight-symbol blackout bm color-moccur color-theme-modern company company-box company-org-block corfu dart-mode dmacro docker docker-compose-mode dockerfile-mode editorconfig eev el-get elixir-mode emmet-mode ess exec-path-from-shell find-file-in-project flutter git-gutter-fringe go-mode google-this guide-key helm-ag helm-c-yasnippet helm-emmet helm-files helm-swoop hydra js2-mode leaf lsp-mode magit magit-section markdown-mode markdown-preview-eww markdown-preview-mode markdown-toc multiple-cursors nyan-mode open-junk-file powershell quickrun rg rust-mode sequential-command session switch-window tide ts-comint typescript-mode use-package vdiff web-mode window-numbering yafolding yasnippet zoom-window))
+   '(ag alchemist all-the-icons anzu auto-highlight-symbol coffee-mode
+        color-moccur color-theme-modern company-box company-org-block
+        dap-mode dart-mode dmacro docker docker-compose-mode
+        dockerfile-mode eev exec-path-from-shell find-file-in-project
+        flutter git-gutter-fringe google-this guide-key helm-bm
+        helm-c-yasnippet helm-emmet js2-mode lsp-tailwindcss lsp-ui
+        magit multiple-cursors nyan-mode open-junk-file point-stack
+        popup quickrun sequential-command session shell-pop
+        switch-window tide ts-comint typescript-mode web-mode
+        window-numbering yafolding yasnippet zoom-window))
  '(session-use-package t nil (session))
  '(shell-pop-full-span t)
  '(shell-pop-restore-window-configuration t)
  '(shell-pop-shell-type
    '("ansi-term" "*ansi-term*"
-     (lambda nil
-       (ansi-term shell-pop-term-shell))))
+     (lambda nil (ansi-term shell-pop-term-shell))))
  '(shell-pop-term-shell "/bin/zsh")
  '(shell-pop-window-position "bottom")
  '(yas-prompt-functions '(my-yas/prompt)))
