@@ -32,10 +32,6 @@
      :client-configs lsp-docker-client-configs)
     )
 
-  (with-eval-after-load 'lsp-mode
-    (add-to-list 'lsp--formatting-indent-alist
-                 ;; defined in web-mode.el
-                 '(web-mode . web-mode-css-indent-offset)))
   ;; ↓ default value
   (setq lsp-enable-indentation t)
 
@@ -89,9 +85,13 @@
   (when (executable-find "rustywind")
     (add-hook 'before-save-hook 'lsp-tailwindcss-rustywind-before-save))
 
-  ;; Vue 3
+  ;; Vue 3 (web-mode)
   (my-lsp-install-server 'vue-semantic-server)
   (add-hook 'web-mode-hook 'lsp)
+  (with-eval-after-load 'lsp-mode
+    (add-to-list 'lsp--formatting-indent-alist
+                 ;; defined in web-mode.el
+                 '(web-mode . web-mode-css-indent-offset)))
   ;; in vue-mode.el
   ;; (add-hook 'vue-mode-hook 'lsp)
 
