@@ -32,6 +32,13 @@
      :client-configs lsp-docker-client-configs)
     )
 
+  (with-eval-after-load 'lsp-mode
+    (add-to-list 'lsp--formatting-indent-alist
+                 ;; defined in web-mode.el
+                 '(web-mode . web-mode-css-indent-offset)))
+  ;; ↓ default value
+  (setq lsp-enable-indentation t)
+
   ;; (when win-env-p
   ;;   (require-with-install 'dap-edge))
 
