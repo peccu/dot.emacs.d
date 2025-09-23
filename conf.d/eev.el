@@ -11,7 +11,7 @@
   (setq eev-mode-map (make-sparse-keymap))
   (define-key eev-mode-map "\M-e" 'ee-eval-sexp-eol) ; extends C-e C-x C-e
   (define-key eev-mode-map "\M-E" 'ee-eval-last-sexp) ; extends    C-x C-e
-  (define-key eev-mode-map "\M-k" 'kill-this-buffer)
+  (define-key eev-mode-map "\M-k" 'kill-current-buffer)
   (define-key eev-mode-map "\M-K" 'bury-buffer)
   ;; (define-key eev-mode-map [f3]   'eeb-default)
   ;; (define-key eev-mode-map [f8]   'eepitch-this-line)
