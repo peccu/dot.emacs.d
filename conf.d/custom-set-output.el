@@ -36,7 +36,8 @@
  '(shell-pop-restore-window-configuration t)
  '(shell-pop-shell-type
    '("ansi-term" "*ansi-term*"
-     (lambda nil (ansi-term shell-pop-term-shell))))
+     (lambda nil
+       (ansi-term shell-pop-term-shell))))
  '(shell-pop-term-shell "/bin/zsh")
  '(shell-pop-window-position "bottom")
  '(yas-prompt-functions '(my-yas/prompt)))
