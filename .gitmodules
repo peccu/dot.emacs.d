@@ -34,3 +34,6 @@
 [submodule "git/vscode-cp-proxy"]
 	path = git/vscode-cp-proxy
 	url = https://github.com/utsahi/vscode-cp-proxy.git
+[submodule "git/code-review"]
+	path = git/code-review
+	url = https://github.com/phelrine/code-review.git
