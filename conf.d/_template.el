@@ -3,6 +3,8 @@
        win-env-p
        wsl-p
        )
+  ;;; refresh
+  ;; (package-refresh-contents)
   ;;; packages version
   ;; (require-with-install 'xxx-mode)
   ;;; submodule version
