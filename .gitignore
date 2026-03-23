@@ -38,3 +38,4 @@ git/ntlniph/
 /.windows.*
 .yas-compiled-snippets.el
 /.cache/
+/minimal.el
